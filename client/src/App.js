@@ -8,18 +8,17 @@ import Home from './components/Home';
 import Room from './components/Room';
 
 function App() {
-  const [user, setUser] = useState('Teste user');
-  const [room, setRoom] = useState('Teste room');
+  const [player, setPlayer] = useState(undefined);
 
   return (
     <Router>
       <div className="App">
-        <Header user={user} room={room}/>
+        <Header player={player} setPlayer={setPlayer}/>
         <Route exact path="/">
-          <Home setUser={setUser} setRoom={setRoom} />
+          <Home player={player} setPlayer={setPlayer}/>
         </Route>
-        <Route path="/room">
-          <Room user={user} room={room} />
+        <Route exact path="/room">
+          <Room player={player}/>
         </Route>
       </div>
     </Router>

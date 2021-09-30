@@ -12,6 +12,62 @@
   align-items: center;
 }
 
+.login {
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid #30A7D7;
+  text-decoration: none;
+}
+
+.login:focus {
+  outline: none;
+  box-shadow: 0 0 3px #719ECE;
+}
+
 .logo {
   height: 30px;
+}
+
+.user {
+  display: flex;
+}
+
+.avatar {
+  margin: 0 5px;
+}
+
+.userInfo {
+  margin: 0 5px;
+  align-self: center;
+}
+
+@media screen and (max-width: 400px) {
+  .logo {
+    display: none;
+  }
+  .header {
+    justify-content: end;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .userInfo {
+    display: none;
+  }
+}
+
+.buttonStyle {
+  text-decoration: none;
+  height: 30px;
+  border-radius: 8px;
+  margin: 0 5px;
+  border: 1px solid #30A7D7;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.buttonStyle:hover {
+  color: #f5f5f5;
+  background-color: #1B53BA;
 }

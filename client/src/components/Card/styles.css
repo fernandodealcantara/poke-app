@@ -1,0 +1,69 @@
+/* Pokemon Card Styles */
+.PokemonCard {
+  width: 100px;
+  margin: 5px;
+}
+
+.Pokemon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color:  #D5A100;
+  height: 100px;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.Pokemon:hover {
+  background-color:#a87e00;
+}
+
+.Pokeball {
+  display: flex;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  transition: all .3s ease;
+  color: transparent;
+  width: 100%;
+  height: 100%;
+}
+
+.Pokeball:hover {
+  background-color: rgba(68, 67, 67, 0.6);
+  background-image: url(../../images/pokeball.png);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.RemoveFavorite {
+  display: flex;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  transition: all .3s ease;
+  color: transparent;
+  width: 100%;
+  height: 100%;
+}
+
+.RemoveFavorite:hover {
+  background-color: rgba(68, 67, 67, 0.6);
+  background-image: url(../../images/remove.png);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.PokemonName {
+  background-color: #f5f5f5;
+  text-align: center;
+  font-size: 0.8rem;
+  width: 96px;
+  height: 65px; 
+  padding: 2px;
+  border-radius: 0 0 5px 5px;
+  text-transform: capitalize;
+  overflow: hidden;
+}
