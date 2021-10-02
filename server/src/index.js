@@ -23,6 +23,10 @@ const app = express();
 
 app.use(cors({origin: 'http://localhost:5000'}));
 
+app.get('/', (req, res) => {
+  res.send('Hello to Poke Guess!')
+})
+
 const httpServer = createServer(app);
 const io = new Server(httpServer);
 
