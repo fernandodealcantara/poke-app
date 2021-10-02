@@ -8,7 +8,7 @@ import GameRunning from './GameRunning.js';
 
 import './styles.css'
 
-const ENDPOINT = "http://localhost:5000"
+const ENDPOINT = "https://poke-guess-backend.herokuapp.com"
 
 let socket = undefined;
 
