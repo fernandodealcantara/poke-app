@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 5000
 
 const app = express();
 
-app.use(cors({origin: 'http://localhost:5000'}));
+app.use(cors({origin: 'https://poke-app-nine.vercel.app'}));
 
 app.get('/', (req, res) => {
   res.send('Hello to Poke Guess!')
