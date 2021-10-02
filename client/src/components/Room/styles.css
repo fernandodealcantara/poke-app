@@ -1,0 +1,185 @@
+/* General div styles */
+.cool {
+  background-color: #F5F5F5;
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 3px;
+}
+
+.RoomContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  width: 900px;
+  padding: 0 15px;
+  border-radius: 10px;
+  min-height: 575px;
+  height: calc(100vh - 85px);
+  margin: 0 auto;
+  box-shadow: 3px 3px #acacac;
+}
+
+.players {
+  display: flex;
+  justify-content: space-between;
+  background-color: #919191;
+  border: 1px solid #3a3a3a;
+  width: calc(100% - 10px);
+  margin-top: 5px;
+  min-height: 65px;
+  height: 65px;
+  max-height: 65px;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.blueTeam {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #0075BE;
+  border: 1px solid #024874;
+  height: 100%;
+  border-radius: 10px;
+  width: 49.5%;
+}
+
+.yellowTeam {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #D5A100;
+  border: 1px solid #795b02;
+  height: 100%;
+  border-radius: 10px;
+  width: 49.5%;
+}
+
+.board {
+  position: relative;
+  background-color: #0A285F;
+  margin-top: 5px;
+  border-radius: 10px;
+  min-height: 300px;
+  height: 300px;
+}
+
+.renderCards {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.roundsStatus {
+  position: absolute;
+  border-radius: 10px;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  box-shadow: 2px 2px black;
+}
+
+.gameInteraction {
+  display: flex;
+  justify-content: space-between;
+  background-color: #4DAD5B;
+  border: 1px solid #388043;
+  margin: 5px 0;
+  padding: 4px;
+  border-radius: 10px;
+  height: 185px;
+}
+
+.gameInfo {
+  display: flex;
+  flex-direction: column;
+  background-color: #30A7D7;
+  border-radius: 10px;
+  border: 1px solid #0A285F;
+  height: 100%;
+  width: 54.5%;
+}
+
+.chat {
+  background-color: #30A7D7;
+  border-radius: 10px;
+  border: 1px solid #0A285F;
+  height: 100%;
+  width: 44.5%;
+}
+
+.initialGame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+}
+
+/* room info styles */
+.info {
+  max-width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Button styles */
+.btn {
+  color: rgb(34, 33, 33);
+  min-height: 33px;
+  height: 33px;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  color: #f5f5f5;
+  background-color: #1B53BA;
+}
+
+/* Custom inputs */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  background: none;
+  outline: none; 
+  -moz-appearance: textfield;
+  width: 30px;
+  text-align: center;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid black;
+}
+
+.roomIdInput {
+  background: none;
+  outline: none;
+  width: 90px;
+  text-align: center;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid black;
+}
+
+.questionInput {
+  width: 350px;
+}
+
+.answerQuestionBtns {
+  margin: 0 3px;
+  padding: 1px;
+  min-height: 10px;
+  height: 20px;
+}
