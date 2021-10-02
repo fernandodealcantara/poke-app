@@ -20,7 +20,6 @@ const BLUE_TEAM = 'blueTeam';
 const YELLOW_TEAM = 'yellowTeam';
 
 const SELECT_POKEMON = 1;
-const CREATE_QUESTION = 2;
 const ANSWER_QUESTION = 3;
 const GUESS = 4;
 
@@ -30,9 +29,6 @@ const Room = ({ player }) => {
   const [accountAlreadyInUse, setAccountAlreadyInUse] = useState(false);
   const [playerTeam, setPlayerTeam] = useState(BLUE_TEAM);
   const [enemyTeam, setEnemyTeam] = useState(YELLOW_TEAM)
-
-  console.log(room)
-
 
   const fetchPokemons = async (page) => {
     const {data, error} = await getPokemons(page);

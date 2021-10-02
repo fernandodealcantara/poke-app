@@ -27,12 +27,10 @@ const httpServer = createServer(app);
 const io = new Server(httpServer);
 
 io.on('connection', (socket) => {
-  console.log('We have a new connection.');
 
   socket.on('join', (roomOwner) => {
     const {room, error} = addRoom({playerName: roomOwner, playerId: socket.id})
     if (error) {
-      console.log(error)
       socket.emit('userAlreadyOnline')
       return;
     }
@@ -117,7 +115,6 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     removePlayer({playerId: socket.id})
-    console.log('User had left.');
   });
 });
 

@@ -11,15 +11,6 @@ export const getPokemons = async (page) => {
   }
 }
 
-export const getPokemon = async (pokemon_name) => {
-  try {
-    const pokemon = await API.get(`/pokemons/${pokemon_name}`);
-    return pokemon
-  } catch(error) {
-    return {error: 'Error trying to get pokemon.'}
-  }
-}
-
 export const getUser = async (username) => {
   try {
     const { data } = await API.get(`/users/${username}`);

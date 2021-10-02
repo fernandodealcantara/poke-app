@@ -80,7 +80,7 @@ const GameRunning = ({room, playerTeam, enemyTeam, handleQuestion, handleAnswer,
           return (
             <div style={{ width: '100%'}}>
               <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                <h5 className='cool'>Respostas recebidas:</h5>
+                <h5 className='cool'>Respostas recebidas: Escolha um pokemon ou se isente!</h5>
                 <button className='cool btn' onClick={() => handleGuessing(NO_VOTE)}>Não votar</button>
               </div>
               {room[playerTeam].questions.map((question, index) => (
