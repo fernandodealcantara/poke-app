@@ -1,5 +1,5 @@
 # POKEDEX - FRONTEND
 
 Feito por
-Fernando de Alcantara,
+Fernando de Alcantara e
 Rodrigo Pereira Couto
