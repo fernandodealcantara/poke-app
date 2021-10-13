@@ -91,7 +91,7 @@
   margin: 5px 0;
   padding: 4px;
   border-radius: 10px;
-  height: 185px;
+  min-height: 185px;
 }
 
 .gameInfo {

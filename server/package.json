@@ -16,6 +16,14 @@
     "socket.io": "^4.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "eslint": "^8.0.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.13",
+    "prettier": "2.4.1"
   }
 }

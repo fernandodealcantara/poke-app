@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './styles.css';
 import Pokemon  from '../Card/Pokemon.js';
 import { getPokemons, postUserFavPokemons, delFromUserFavPokemons } from '../../api/pokedex.js';
@@ -9,9 +9,12 @@ const Home = ({ player, setPlayer }) => {
   const [pageInfo, setPageInfo] = useState(undefined);
   const [page, setPage] = useState(1);
   const [display, setDisplay] = useState(false)
+  const favPokes = useRef(null)
 
   const goBack = () => { if (pageInfo?.prev_page) setPage(pageInfo?.prev_page)}
   const goNext = () => { if (pageInfo?.next_page) setPage(pageInfo?.next_page)}
+
+  const onWheel = (e) => favPokes.current.scrollLeft += e.deltaY
 
   const fetchPokemons = async () => {
     const {data, size, next_page, prev_page, error} = await getPokemons(page);
@@ -59,7 +62,7 @@ const Home = ({ player, setPlayer }) => {
       <button style={{ display: player ? "block" : "none"}} className="button" onClick={() => setDisplay(!display)}>
         Meus Pokemons
       </button>
-      <div style={{ display: display && player ? "flex" : "none" }} className="favoritePokemons">
+      <div ref={favPokes} onWheel={onWheel} style={{ display: display && player ? "flex" : "none" }} className="favoritePokemons">
           {userPokemons.map((pokemon) => <Pokemon handlePokemon={handleRemFavoritePokemons} useDelete key={pokemon.id} pokemon={pokemon}/>)}
       </div>
       <div className="allPokemons">

@@ -8,7 +8,7 @@ import GameRunning from './GameRunning.js';
 
 import './styles.css'
 
-const ENDPOINT = "https://poke-guess-backend.herokuapp.com"
+const ENDPOINT = "http://localhost:5000/"
 
 let socket = undefined;
 
@@ -20,8 +20,13 @@ const BLUE_TEAM = 'blueTeam';
 const YELLOW_TEAM = 'yellowTeam';
 
 const SELECT_POKEMON = 1;
+const QUESTION_PHASE = 2.1;
 const ANSWER_QUESTION = 3;
 const GUESS = 4;
+
+const YES = 1;
+const NO = 2;
+const INAPPROPRIATE = 3;
 
 const Room = ({ player }) => {
   const [room, setRoom] = useState(undefined);
@@ -187,7 +192,22 @@ const Room = ({ player }) => {
     <div className="board">
       <div className='renderCards'>
       {room.gameCards.length !== 25 
-        ? <p style={{color: "#f5f5f5"}}>Nenhuma cartela de 25 pokemons selecionada.</p> 
+        ? <div className='cool' style={{textAlign: 'center'}}>
+            Jogo inspirado no joguinho Adivinha Quem <hr /> 
+            Nesse jogo cada uma das equipes escolhe um pokemon e tenta adivinhar o pokemon escolhido
+            pela equipe adversária. <hr />
+            No início da partida o dono da sala deve escolher uma cartela de pokemons inserindo um valor de 1 a 32
+            e pressionando Enter para submeter a escolha. Fazendo o mesmo para escolher a quantidade de rodadas.<br/>
+            Por fim o jogador deve iniciar uma partida. A partida é iniciada se tiver ao menos um jogador em cada equipe.<hr/>
+            No início da rodada ambas as equipes devem selecionar de 1 até N pokemons para um ser escolhido, onde N = Tamanho da equipe. <hr/>
+            Depois do pokemon ser escolhido, cada equipe deve fazer três perguntas que devem ser respondidas
+            de forma imediata pela equipe adversária{` (sempre espere a sua pergunta atual ser respondida para fazer uma nova
+            e ter mais chance de acertar o pokemon da equipe adversária)`}. <hr/>
+            Após ambas as equipes terem feito suas perguntas, cada integrante da equipe pode escolher um pokemon e, caso alguém acerte,
+            a equipe pontua. <hr/>
+            Considerações finais: JOGUINHO FEITO PARA APRENDER UMA TECNOLOGIA NOVA.
+            NÃO HOUVE UMA ESTRUTURAÇÃO IDEAL PARA ESSE PROJETO E FOI FEITO NO "FREESTYLE" E POR DIVERSÃO.
+          </div> 
         : room.gameCards.map((pokemon) => <Pokemon handlePokemon={handlePokemon} pokemon={pokemon} key={pokemon.id}/>)
       }
       </div>
@@ -238,6 +258,40 @@ const Room = ({ player }) => {
             ))}
           </div>
         </>)}
+        {room.gameInfo.status === PLAYING && room.gameInfo.stage === QUESTION_PHASE && (
+        <div style={{ width: '100%', overflow: 'auto'}}>
+          <h5 className='cool'>Responda as perguntas sobre o pokemon escolhido!</h5>
+            {room[enemyTeam].questions.map((question, index) => (
+            <div key={index} className='cool' style={{display: 'flex', flex: 1, justifyContent: 'space-between'}}>
+              <div style={{ overflow: 'auto'}}>{question.question}</div>
+              <div style={{width: '100px', minWidth: '100px'}}>
+                <button 
+                  className='cool btn answerQuestionBtns'
+                  style={{color: question.answer === YES ? 'green' : 'black'}}
+                  onClick={() => handleAnswer(index, YES)}
+                >
+                  Sim
+                </button>
+                <button 
+                  className='cool btn answerQuestionBtns'
+                  style={{color: question.answer === NO ? 'green' : 'black'}}
+                  onClick={() => handleAnswer(index, NO)}
+                >
+                  Não
+                </button>
+                <button 
+                  className='cool btn answerQuestionBtns'
+                  title="Pergunta imprópria"
+                  style={{color: question.answer === INAPPROPRIATE ? 'green' : 'black'}}
+                  onClick={() => handleAnswer(index, INAPPROPRIATE)}
+                >
+                  Imp
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+        )}
         {room.gameInfo.status !== INITIAL && room.gameInfo.stage === SELECT_POKEMON && (
         <>
           <h5 className='cool'>Mensagem da sala:</h5>
