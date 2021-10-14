@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.header-room {
+  min-width: 900px;
+}
+
 .login {
   padding: 5px;
   border-radius: 8px;

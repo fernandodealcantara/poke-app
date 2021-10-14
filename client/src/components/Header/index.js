@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './styles.css';
 import pokeGuessImage from '../../images/poke-guess.png'
 import { getUser } from '../../api/pokedex.js'
 
 const Header = ({player, setPlayer}) => {
+  const location = useLocation().pathname
   const [username, setUsername] = useState('');
 
   const handleSetUser = async (e) => {
@@ -16,7 +17,7 @@ const Header = ({player, setPlayer}) => {
   }
 
   return (
-  <div className="header">
+  <div className={`header ${location === "/room" && 'header-room'}`}>
     <img className="logo" src={pokeGuessImage} alt="Poke Guess Logo" />
     {player ? 
       <span className="user">
