@@ -15,7 +15,7 @@
   padding: 0 15px;
   border-radius: 10px;
   min-height: 575px;
-  height: calc(100vh - 85px);
+  height: 100%;
   margin: 0 auto;
   box-shadow: 3px 3px #acacac;
 }
