@@ -1,74 +1,95 @@
+
 .Container {
-    display: flex;
-    flex-direction: column;
-    background-color: #f5f5f5;
-    width: 90%;
-    max-width: 900px;
-    padding: 0 15px;
-    border-radius: 10px;
-    min-height: 465px;
-    height: calc(100vh - 85px);
-    margin: 0 auto;
-    box-shadow: 3px 3px #acacac;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  width: 90%;
+  max-width: 900px;
+  padding: 0 15px;
+  border-radius: 10px;
+  min-height: 465px;
+  height: calc(100vh - 85px);
+  margin: 0 auto;
+  box-shadow: 3px 3px #acacac;
 }
 
 .favoritePokemons {
-    display: flex;
-    overflow: auto; 
-    background-color: #0075BE;
-    min-height: 190px;
-    height: 190px;
-    border-radius: 10px;
-    margin: 5px;
-    background-color: #08c708; 
+  display: flex;
+  overflow: auto;
+  background-color: #0075be;
+  min-height: 190px;
+  height: 190px;
+  border-radius: 10px;
+  margin: 5px;
+  background-color: #08c708;
 }
 
 .allPokemons {
-    background-color: #0A285F;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-    min-height: 180px;
-    flex: 1;
+  background-color: #0a285f;
+  display: flex;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 250px;
 }
 
 .button {
-    border-radius: 15px;
-    min-height: 30px;
-    height: 30px;
-    width: 90%;
-    max-width: 300px;
-    margin: 5px auto;
-    border: 1px solid #30A7D7;
-    cursor: pointer;
-    transition: all .2s ease;
+  border-radius: 15px;
+  min-height: 30px;
+  height: 30px;
+  width: 90%;
+  max-width: 300px;
+  margin: 5px auto;
+  border: 1px solid #30a7d7;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .button:focus {
-    outline: none;
+  outline: none;
 }
 
 .button:hover {
-    color: #f5f5f5;
-    background-color: #1B53BA;
+  color: #f5f5f5;
+  background-color: #1b53ba;
 }
 
 .pageButtons {
-    width: 80px;
-    margin: 0;
-    border-radius: 10px;
+  width: 80px;
+  margin: 0;
+  border-radius: 10px;
 }
 
-.changePages {
-    height: 30px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
-    background-color: #30A7D7;
-    width: 100%;
-    border-radius: 10px;
+.searchBar {
+  height: 30px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  background-color: #30a7d7;
+  width: 100%;
+  border-radius: 10px;
+}
+.Row {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+.List {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+.search {
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #30A7D7;
+    text-decoration: none;
+}
+.search:focus {
+    outline: none;
+    box-shadow: 0 0 3px #719ECE;
 }
