@@ -68,6 +68,7 @@
   width: 100%;
   border-radius: 10px;
 }
+
 .Row {
   width: 100%;
   height: 100%;
@@ -79,16 +80,19 @@
   padding: 0 0.5rem;
   box-sizing: border-box;
 }
+
 .search {
   padding: 5px;
   border-radius: 8px;
   border: 1px solid #30a7d7;
   text-decoration: none;
 }
+
 .search:focus {
   outline: none;
   box-shadow: 0 0 3px #719ece;
 }
+
 .buttonDiv {
   background-color: #08c708;
   margin-top: 5px;
