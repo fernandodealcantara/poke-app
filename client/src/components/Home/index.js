@@ -17,7 +17,7 @@ const Home = ({ player, setPlayer }) => {
   const favPokes = useRef(null);
   const [search, setSearch] = useState("");
   const ITEMS_COUNT = filteredPokemons.length;
-  const ITEM_SIZE = 200;
+  const ITEM_SIZE = 180;
 
   const onWheel = (e) => (favPokes.current.scrollLeft += e.deltaY);
 
@@ -75,13 +75,18 @@ const Home = ({ player, setPlayer }) => {
 
   return (
     <div className="Container">
-      <button
-        style={{ display: player ? "block" : "none" }}
-        className="button"
-        onClick={() => setDisplay(!display)}
+      <div
+        style={{ borderRadius: display ? "10px 10px 0px 0px" : "10px" }}
+        className="buttonDiv"
       >
-        Meus Pokemons
-      </button>
+        <button
+          style={{ display: player ? "block" : "none" }}
+          className="button"
+          onClick={() => setDisplay(!display)}
+        >
+          Meus Pokemons
+        </button>
+      </div>
       <div
         ref={favPokes}
         onWheel={onWheel}
